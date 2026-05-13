@@ -1,0 +1,18 @@
+services:
+  py313:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: py313-lab
+
+    working_dir: /workspace
+
+    volumes:
+      - ./src:/workspace/src
+      - ./data:/workspace/data
+      - ./notebooks:/workspace/notebooks
+      - ./config:/workspace/config
+
+    stdin_open: true
+    tty: true
